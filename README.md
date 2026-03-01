@@ -60,3 +60,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     check_bytes(args.file)
 ```py
+
+
+
+# Kernel driver 
+https://github.com/BlackSnufkin/BYOVD
+https://github.com/xM0kht4r/VEN0m-Ransomware
