@@ -59,7 +59,7 @@ if __name__ == "__main__":
     parser.add_argument("--file", help="EXE file path", required=True)
     args = parser.parse_args()
     check_bytes(args.file)
-```py
+```
 
 
 
