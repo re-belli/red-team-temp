@@ -62,8 +62,3 @@ if __name__ == "__main__":
     check_bytes(args.file)
 ```
 
-
-
-# Kernel driver 
-https://github.com/BlackSnufkin/BYOVD
-https://github.com/xM0kht4r/VEN0m-Ransomware
